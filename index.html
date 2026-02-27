@@ -87,7 +87,8 @@
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full overflow-auto">
-  <div id="app" class="min-h-full star-bg p-4 relative overflow-hidden"><!-- Decorative elements -->
+  <div id="app" class="min-h-full star-bg p-4 relative overflow-hidden">
+   <!-- Decorative elements -->
    <div class="absolute top-10 left-10 text-6xl float-animation opacity-60">
     ⭐
    </div>
@@ -109,18 +110,22 @@
      <p id="welcome-msg" class="text-lg text-gray-600 mb-2">Luyện từ và câu - Lớp 3</p>
      <p class="text-gray-500 mb-8">Kết nối tri thức với cuộc sống</p>
      <div class="bg-gradient-to-r from-amber-100 to-orange-100 rounded-2xl p-6 mb-8">
-      <div class="flex items-center justify-center gap-3 mb-3"><span class="text-3xl">🎯</span> <span class="text-xl font-semibold text-amber-800">15 câu hỏi thử thách</span>
+      <div class="flex items-center justify-center gap-3 mb-3">
+       <span class="text-3xl">🎯</span> <span class="text-xl font-semibold text-amber-800">15 câu hỏi thử thách</span>
       </div>
       <p class="text-amber-700">Trả lời đúng để thu thập ngôi sao!</p>
      </div><button onclick="startGame()" class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-xl font-bold py-4 px-12 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 pulse-glow"> 🚀 Bắt đầu chơi </button>
     </div>
    </div><!-- Game Screen -->
    <div id="game-screen" class="hidden min-h-full py-4">
-    <div class="max-w-3xl mx-auto"><!-- Header -->
+    <div class="max-w-3xl mx-auto">
+     <!-- Header -->
      <div class="flex justify-between items-center mb-4 px-2">
-      <div class="flex items-center gap-2 bg-white/90 rounded-full px-4 py-2 shadow-lg"><span class="text-2xl">⭐</span> <span id="score" class="text-xl font-bold text-amber-600">0</span>
+      <div class="flex items-center gap-2 bg-white/90 rounded-full px-4 py-2 shadow-lg">
+       <span class="text-2xl">⭐</span> <span id="score" class="text-xl font-bold text-amber-600">0</span>
       </div>
-      <div class="bg-white/90 rounded-full px-4 py-2 shadow-lg"><span class="text-lg font-semibold text-blue-800">Câu <span id="current-q">1</span>/15</span>
+      <div class="bg-white/90 rounded-full px-4 py-2 shadow-lg">
+       <span class="text-lg font-semibold text-blue-800">Câu <span id="current-q">1</span>/15</span>
       </div>
      </div><!-- Progress Bar -->
      <div class="bg-white/30 rounded-full h-4 mb-6 mx-2 overflow-hidden">
@@ -133,9 +138,11 @@
        </div>
        <h2 id="question-text" class="text-xl md:text-2xl font-semibold text-gray-800 leading-relaxed"></h2>
       </div>
-      <div id="options-container" class="grid gap-3"><!-- Options will be inserted here -->
+      <div id="options-container" class="grid gap-3">
+       <!-- Options will be inserted here -->
       </div><!-- Feedback -->
-      <div id="feedback" class="hidden mt-6 p-4 rounded-2xl text-center"><span id="feedback-icon" class="text-4xl block mb-2"></span>
+      <div id="feedback" class="hidden mt-6 p-4 rounded-2xl text-center">
+       <span id="feedback-icon" class="text-4xl block mb-2"></span>
        <p id="feedback-text" class="text-lg font-semibold"></p>
       </div><!-- Next Button --> <button id="next-btn" onclick="nextQuestion()" class="hidden w-full mt-6 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white text-lg font-bold py-4 rounded-2xl shadow-lg transform hover:scale-[1.02] transition-all duration-300"> Câu tiếp theo ➡️ </button>
      </div>
@@ -152,7 +159,8 @@
       </div>
       <p class="text-2xl font-bold text-amber-800">Điểm số: <span id="final-score">0</span>/15</p>
      </div>
-     <div class="flex flex-col sm:flex-row gap-4 justify-center"><button onclick="restartGame()" class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-lg font-bold py-4 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"> 🔄 Chơi lại </button> <button onclick="goHome()" class="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white text-lg font-bold py-4 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"> 🏠 Về trang chủ </button>
+     <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <button onclick="restartGame()" class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white text-lg font-bold py-4 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"> 🔄 Chơi lại </button> <button onclick="goHome()" class="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white text-lg font-bold py-4 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"> 🏠 Về trang chủ </button>
      </div>
     </div>
    </div><!-- Confetti Container -->
@@ -166,78 +174,78 @@
 
     const questions = [
       {
-        question: "Từ nào dưới đây chỉ đồ dùng học tập?",
-        options: ["Bàn ghế", "Cặp sách", "Cây bàng", "Con chim"],
-        correct: 1
-      },
-      {
-        question: "Câu \"Em đến trường học bài.\" thuộc kiểu câu gì?",
-        options: ["Câu hỏi", "Câu kể", "Câu cảm", "Câu khiến"],
-        correct: 1
-      },
-      {
-        question: "Từ \"rộn ràng\" trong câu \"Sân trường rộn ràng tiếng cười\" là từ loại gì?",
-        options: ["Danh từ", "Động từ", "Tính từ", "Đại từ"],
-        correct: 2
-      },
-      {
-        question: "Điền từ thích hợp: \"Cổng trường ... mở chào đón học sinh.\"",
-        options: ["đóng", "rộng", "hẹp", "cao"],
-        correct: 1
-      },
-      {
-        question: "Từ nào sau đây chỉ hoạt động?",
-        options: ["Học sinh", "Chạy nhảy", "Sách vở", "Xinh đẹp"],
-        correct: 1
-      },
-      {
-        question: "Câu nào sau đây là câu hỏi?",
-        options: ["Em đi học.", "Hôm nay trời đẹp quá!", "Bạn tên là gì?", "Hãy học bài đi!"],
-        correct: 2
-      },
-      {
-        question: "Từ \"thầy giáo\" thuộc từ loại gì?",
-        options: ["Động từ", "Tính từ", "Danh từ", "Trạng từ"],
-        correct: 2
-      },
-      {
-        question: "Chọn từ đúng điền vào chỗ trống: \"Mùa thu, lá ... rụng đầy sân trường.\"",
-        options: ["xanh", "vàng", "đỏ", "tím"],
-        correct: 1
-      },
-      {
-        question: "Từ nào dưới đây là từ chỉ đặc điểm?",
-        options: ["Chăm chỉ", "Học tập", "Bạn bè", "Trường học"],
+        question: "Từ nào dưới đây chỉ sự vật (đồ dùng học tập)?",
+        options: ["Bàn", "Chạy", "Vàng", "Chim"],
         correct: 0
       },
       {
-        question: "Câu \"Trường em đẹp quá!\" bộc lộ cảm xúc gì?",
-        options: ["Buồn bã", "Ngạc nhiên, thích thú", "Tức giận", "Sợ hãi"],
-        correct: 1
-      },
-      {
-        question: "Từ ghép nào sau đây chỉ người?",
-        options: ["Sách vở", "Bàn ghế", "Học sinh", "Hoa lá"],
+        question: "\"Rộng\" trong câu \"Cổng trường rộng mở\" chỉ gì?",
+        options: ["Sự vật", "Hoạt động", "Đặc điểm", "Cảm xúc"],
         correct: 2
       },
       {
-        question: "Dấu câu nào đặt cuối câu hỏi?",
-        options: ["Dấu chấm (.)", "Dấu chấm hỏi (?)", "Dấu chấm than (!)", "Dấu phẩy (,)"],
+        question: "Từ nào chỉ hoạt động?",
+        options: ["Sách", "Chạy", "Đỏ", "Trường"],
         correct: 1
       },
       {
-        question: "Từ \"vui vẻ\" trong câu \"Các bạn vui vẻ đến trường\" là từ loại gì?",
-        options: ["Danh từ", "Động từ", "Tính từ", "Giới từ"],
+        question: "\"Sân trường\" là từ chỉ gì?",
+        options: ["Hoạt động", "Đặc điểm", "Sự vật (nơi chốn)", "Cảm xúc"],
         correct: 2
       },
       {
-        question: "Câu khiến thường có từ nào?",
-        options: ["Ai, gì, nào", "Hãy, đừng, chớ", "Ôi, chao, trời ơi", "Và, với, cùng"],
+        question: "Từ nào dưới đây chỉ đặc điểm?",
+        options: ["Học sinh", "Đẹp", "Học tập", "Cặp sách"],
         correct: 1
       },
       {
-        question: "Từ nào sau đây chỉ nơi chốn?",
-        options: ["Học giỏi", "Sân trường", "Đọc sách", "Ngoan ngoãn"],
+        question: "\"Nhảy\" là từ chỉ gì?",
+        options: ["Sự vật", "Đặc điểm", "Hoạt động", "Nơi chốn"],
+        correct: 2
+      },
+      {
+        question: "Từ nào chỉ sự vật (người)?",
+        options: ["Yêu thương", "Xanh", "Thầy giáo", "Hát"],
+        correct: 2
+      },
+      {
+        question: "\"Sáng\" trong \"Trời sáng\" chỉ gì?",
+        options: ["Sự vật", "Hoạt động", "Đặc điểm", "Thời gian"],
+        correct: 2
+      },
+      {
+        question: "Chọn từ chỉ hoạt động: Học sinh ... sách.",
+        options: ["đỏ", "đọc", "sân trường", "xinh xắn"],
+        correct: 1
+      },
+      {
+        question: "Từ nào chỉ sự vật (đồ dùng)?",
+        options: ["Nhanh", "Vui", "Bàn ghế", "Chạy"],
+        correct: 2
+      },
+      {
+        question: "\"Hát\" là từ chỉ gì?",
+        options: ["Sự vật", "Đặc điểm", "Hoạt động", "Màu sắc"],
+        correct: 2
+      },
+      {
+        question: "Từ \"vàng\" (lá vàng) chỉ gì?",
+        options: ["Hoạt động", "Sự vật", "Đặc điểm", "Nơi chốn"],
+        correct: 2
+      },
+      {
+        question: "\"Học bài\" là hoạt động gì?",
+        options: ["Hoạt động thể chất", "Hoạt động trí tuệ", "Hoạt động vui chơi", "Hoạt động nghỉ ngơi"],
+        correct: 1
+      },
+      {
+        question: "Chọn từ chỉ sự vật: Tôi có một ... lớp 3.",
+        options: ["đẹp", "chạy", "cặp sách", "hát"],
+        correct: 2
+      },
+      {
+        question: "Từ nào chỉ hoạt động của học sinh?",
+        options: ["Chiếc bàn", "Nghe giảng", "Trắng", "Cổng trường"],
         correct: 1
       }
     ];
@@ -423,5 +431,5 @@
       });
     }
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d457e80b4bce2f6',t:'MTc3MjE3MjM2NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d45c85ed7ab84f6',t:'MTc3MjE3NTM5MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
